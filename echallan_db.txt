@@ -1,0 +1,75 @@
+-- phpMyAdmin SQL Dump
+-- version 5.2.1
+-- https://www.phpmyadmin.net/
+--
+-- Host: 127.0.0.1
+-- Generation Time: Sep 11, 2024 at 12:37 PM
+-- Server version: 10.4.32-MariaDB
+-- PHP Version: 8.2.12
+
+SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
+START TRANSACTION;
+SET time_zone = "+00:00";
+
+
+/*!40101 SET @OLD_CHARACTER_SET_CLIENT=@@CHARACTER_SET_CLIENT */;
+/*!40101 SET @OLD_CHARACTER_SET_RESULTS=@@CHARACTER_SET_RESULTS */;
+/*!40101 SET @OLD_COLLATION_CONNECTION=@@COLLATION_CONNECTION */;
+/*!40101 SET NAMES utf8mb4 */;
+
+--
+-- Database: `echallan_db`
+--
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `challans`
+--
+
+CREATE TABLE `challans` (
+  `challan_number` varchar(10) NOT NULL,
+  `vehicle_number` varchar(15) NOT NULL,
+  `owner_name` varchar(100) DEFAULT NULL,
+  `violation_type` varchar(50) DEFAULT NULL,
+  `violation_date` datetime DEFAULT NULL,
+  `location` varchar(100) DEFAULT NULL,
+  `amount` decimal(10,2) DEFAULT NULL,
+  `due_date` date DEFAULT NULL,
+  `payment_status` varchar(20) DEFAULT NULL,
+  `id` int(11) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+
+--
+-- Dumping data for table `challans`
+--
+
+INSERT INTO `challans` (`challan_number`, `vehicle_number`, `owner_name`, `violation_type`, `violation_date`, `location`, `amount`, `due_date`, `payment_status`, `id`) VALUES
+('1234567890', 'UP95AC1236', 'Israt khan', 'Wrong Parking', '2024-09-03 13:33:00', 'Chattarpur M.P', 50.00, '2024-10-03', 'Complete', 1),
+('UP32CHLN20', 'UP32AB1234', 'Fida Khan', 'Driving Without Helmet', '2024-09-04 15:12:00', 'Charkhari Bus stand', 100.00, '2024-10-04', 'Pending', 2),
+('UP32CHLN20', 'UP32AB1234', 'Fida Khan', 'Wrong Parking', '2024-08-13 16:28:00', 'mahoba roaidbaze', 50.00, '2024-09-13', 'pending', 6);
+
+--
+-- Indexes for dumped tables
+--
+
+--
+-- Indexes for table `challans`
+--
+ALTER TABLE `challans`
+  ADD PRIMARY KEY (`id`);
+
+--
+-- AUTO_INCREMENT for dumped tables
+--
+
+--
+-- AUTO_INCREMENT for table `challans`
+--
+ALTER TABLE `challans`
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=7;
+COMMIT;
+
+/*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
+/*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;
+/*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
